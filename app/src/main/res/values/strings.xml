@@ -1,3 +1,41 @@
 <resources>
     <string name="app_name">TestHotel</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="booking">Бронирование</string>
+    <string name="departure_from">Вылет из</string>
+    <string name="city_country">Страна, город</string>
+    <string name="date">Даты</string>
+    <string name="number_of_nights">Кол-во ночей</string>
+    <string name="hotel">Отель</string>
+    <string name="hotel_room">Номер</string>
+    <string name="feed">Питание</string>
+    <string name="warning">Эти данные никому не передаются. После оплаты мы вышли чек на указанный вами номер и почту</string>
+    <string name="first_tourist">Первый турист</string>
+    <string name="name">Имя</string>
+    <string name="surname">Фамилия</string>
+    <string name="birth">Дата рождения</string>
+    <string name="citizenship">Гражданство</string>
+    <string name="number_passport">Номер загранпаспорта</string>
+    <string name="validity_period">Срок действия загранпаспорта</string>
+    <string name="add_tourist">Добавить туриста</string>
+    <string name="tour">Тур</string>
+    <string name="fuel_collection">Топливный сбор</string>
+    <string name="service_fee">Сервисный сбор</string>
+    <string name="to_paid">К оплате</string>
+    <string name="facilities">Удобства</string>
+    <string name="whats_included">Что включено</string>
+    <string name="whats_not_included">Что не включено</string>
+    <string name="essentials">Самое необходимое</string>
+    <string name="your_order_was_received">Ваш заказ принят в работу</string>
+    <string name="order_confirmation_details">Подтверждение заказа №104893 может занять некоторое время (от 1 часа до суток). Как только мы получим ответ от туроператора, вам на почту придет уведомление.</string>
+
+    <string name="error_input_name">Invalid name</string>
+    <string name="error_input_surname">Invalid surname</string>
+    <string name="error_input_dateOfBirth">Invalid dateOfBirth</string>
+    <string name="error_input_citizenship">Invalid citizenship</string>
+    <string name="error_input_numberPassport">Invalid numberPassport</string>
+    <string name="error_input_validityPeriod">Invalid validityPeriod</string>
+    <string name="error_input_email">Invalid email</string>
+    <string name="order">Заказ оплачен</string>
 </resources>

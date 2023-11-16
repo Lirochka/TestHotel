@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/hotelInfoFragment">
+
+    <fragment
+        android:id="@+id/hotelInfoFragment"
+        android:name="com.example.testhotel.ui.fragments.HotelInfoFragment"
+        android:label="fragment_hotel_info"
+        tools:layout="@layout/fragment_hotel_info">
+        <action
+            android:id="@+id/action_hotelInfoFragment_to_hotelRoomFragment"
+            app:destination="@id/hotelRoomFragment"/>
+    </fragment>
+    <fragment
+        android:id="@+id/hotelRoomFragment"
+        android:name="com.example.testhotel.ui.fragments.HotelRoomFragment"
+        android:label="fragment_hotel_room"
+        tools:layout="@layout/fragment_hotel_room">
+        <action
+            android:id="@+id/action_hotelRoomFragment_to_bookingFragment"
+            app:destination="@id/bookingFragment" />
+        <argument
+            android:name="hotel"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_hotelRoomFragment_to_hotelInfoFragment"
+            app:destination="@id/hotelInfoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bookingFragment"
+        android:name="com.example.testapp.presentation.fragment.BookingFragment"
+        android:label="fragment_booking"
+        tools:layout="@layout/fragment_booking">
+        <action
+            android:id="@+id/action_bookingFragment_to_paidFragment"
+            app:destination="@id/paidFragment"
+            app:popUpTo="@id/bookingFragment" />
+        <action
+            android:id="@+id/action_bookingFragment_to_hotelRoomFragment"
+            app:destination="@id/hotelRoomFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/paidFragment"
+        android:name="com.example.testhotel.ui.fragments.PaidFragment"
+        android:label="fragment_paid"
+        tools:layout="@layout/fragment_paid">
+        <action
+            android:id="@+id/action_paidFragment_to_hotelInfoFragment"
+            app:destination="@id/hotelInfoFragment" />
+    </fragment>
+</navigation>

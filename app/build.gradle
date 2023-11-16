@@ -2,16 +2,18 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id 'androidx.navigation.safeargs.kotlin'
+    id 'kotlin-kapt'
+    id 'com.google.dagger.hilt.android'
 }
 
 android {
     namespace 'com.example.testhotel'
-    compileSdk 33
+    compileSdk 34
 
     defaultConfig {
         applicationId "com.example.testhotel"
         minSdk 24
-        targetSdk 33
+        targetSdk 34
         versionCode 1
         versionName "1.0"
 
@@ -34,10 +36,14 @@ android {
 
     buildFeatures {
         viewBinding true
+        dataBinding true
     }
 }
 
 dependencies {
+
+    implementation project(path: ':domain')
+    implementation project(path: ':data')
 
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.6.1'
@@ -54,4 +60,15 @@ dependencies {
 
     //Image slide
     implementation 'com.github.denzcoskun:ImageSlideshow:0.1.0'
+
+    //Hilt
+    implementation 'com.google.dagger:hilt-android:2.44'
+    kapt 'com.google.dagger:hilt-android-compiler:2.44'
+
+    implementation 'com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.3'
+
+    //ViewModel
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1"
+    implementation 'androidx.fragment:fragment-ktx:1.5.7'
+    implementation 'androidx.activity:activity-ktx:1.7.1'
 }

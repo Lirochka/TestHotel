@@ -1,0 +1,653 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.testhotel.ui.viewmodel.BookingFragmentViewModel" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.fragments.BookingFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/booking_appBarLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.appbar.MaterialToolbar
+                    android:id="@+id/booking_topAppBar"
+                    style="@style/Widget.MaterialComponents.Toolbar.Primary"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:background="@color/white"
+                    app:layout_scrollFlags="scroll|enterAlways"
+                    app:navigationIcon="@drawable/back_presses"
+                    app:title="@string/booking"
+                    app:titleTextColor="@color/black">
+
+                </com.google.android.material.appbar.MaterialToolbar>
+            </com.google.android.material.appbar.AppBarLayout>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/booking_card_about_hotel"
+                style="@style/booking_main_card"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="10dp"
+                app:layout_constraintEnd_toStartOf="@+id/booking_appBarLayout"
+                app:layout_constraintStart_toEndOf="@+id/booking_appBarLayout"
+                app:layout_constraintTop_toBottomOf="@+id/booking_appBarLayout">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    style="@style/booking_constraintLayout">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/booking_card_rating"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/orange_light"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <LinearLayout
+                            style="@style/linearLayout_horizontal"
+                            android:padding="2dp">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginEnd="8dp"
+                                android:src="@drawable/icons" />
+
+                            <TextView
+                                android:id="@+id/booking_rating"
+                                style="@style/booking_rating_textView"
+                                android:layout_marginEnd="16dp"
+                                android:textSize="18sp"
+                                tools:text="5" />
+
+                            <TextView
+                                android:id="@+id/booking_rating_name"
+                                style="@style/booking_rating_textView"
+                                android:textSize="18sp"
+                                tools:text="Превосходно" />
+
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <TextView
+                        android:id="@+id/booking_hotel_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:textColor="@color/black"
+                        android:textSize="25sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/booking_card_rating"
+                        tools:text="Hotel" />
+
+                    <TextView
+                        android:id="@+id/booking_hotel_adress"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:textColor="@color/blue"
+                        android:textSize="18sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/booking_hotel_name"
+                        tools:text="Hotel" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/booking_card_details"
+                style="@style/booking_main_card"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/booking_card_about_hotel">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="16dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout style="@style/linearLayout_horizontal">
+
+                        <TextView
+                            style="@style/booking_details"
+                            android:text="@string/departure_from" />
+
+                        <TextView
+                            android:id="@+id/booking_departure"
+                            style="@style/booking_details_2"
+                            tools:text="Санкт-Петербург" />
+                    </LinearLayout>
+
+                    <LinearLayout style="@style/linearLayout_horizontal">
+
+                        <TextView
+                            style="@style/booking_details"
+                            android:text="@string/city_country" />
+
+                        <TextView
+                            android:id="@+id/booking_to_country"
+                            style="@style/booking_details_2"
+                            tools:text="Египет, Хургада" />
+                    </LinearLayout>
+
+                    <LinearLayout style="@style/linearLayout_horizontal">
+
+                        <TextView
+                            style="@style/booking_details"
+                            android:text="@string/date" />
+
+                        <TextView
+                            android:id="@+id/booking_date"
+                            style="@style/booking_details_2"
+                            tools:text="19.09.2023 – 27.09.2023" />
+                    </LinearLayout>
+
+                    <LinearLayout style="@style/linearLayout_horizontal">
+
+                        <TextView
+                            style="@style/booking_details"
+                            android:text="@string/number_of_nights" />
+
+                        <TextView
+                            android:id="@+id/booking_number_of_nights"
+                            style="@style/booking_details_2"
+                            tools:text="7 ночей" />
+                    </LinearLayout>
+
+                    <LinearLayout style="@style/linearLayout_horizontal">
+
+                        <TextView
+                            style="@style/booking_details"
+                            android:text="@string/hotel" />
+
+                        <TextView
+                            android:id="@+id/booking_hotel"
+                            style="@style/booking_details_2"
+                            tools:text="Steigenberger Makadi" />
+                    </LinearLayout>
+
+                    <LinearLayout style="@style/linearLayout_horizontal">
+
+                        <TextView
+                            style="@style/booking_details"
+                            android:text="@string/hotel_room" />
+
+                        <TextView
+                            android:id="@+id/booking_hotel_room"
+                            style="@style/booking_details_2"
+                            tools:text="Стандартный с видом на бассейн или сад" />
+                    </LinearLayout>
+
+                    <LinearLayout style="@style/linearLayout_horizontal">
+
+                        <TextView
+                            style="@style/booking_details"
+                            android:text="@string/feed" />
+
+                        <TextView
+                            android:id="@+id/booking_nutrition"
+                            style="@style/booking_details_2"
+                            tools:text="Все включено" />
+                    </LinearLayout>
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/booking_card_info_buyer"
+                style="@style/booking_main_card"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/booking_card_details">
+
+                <androidx.constraintlayout.widget.ConstraintLayout style="@style/booking_constraintLayout">
+
+                    <TextView
+                        android:id="@+id/booking_title_buyer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Информация о покупателе"
+                        android:textColor="@color/black"
+                        android:textSize="28sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/phoneTextInputLayout"
+                        style="@style/RoundedTextInputLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:hint="@string/phone_number"
+                        app:expandedHintEnabled="false"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/booking_title_buyer"
+                        app:errorPhone="@{viewModel.errorPhone}">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/phoneTextInputEditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@={viewModel.phone}"
+                            android:hint="@string/phone_number_hint"
+                            android:digits="0123456789-+()"
+                            android:inputType="phone"
+                            android:maxLength="18"
+                            app:phoneMask="@{viewModel.phoneMask}" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/emailTextInputLayout"
+                        style="@style/RoundedTextInputLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:hint="Почта"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/phoneTextInputLayout"
+                        app:errorEmail="@{viewModel.emailError}">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/emailTextInputEditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textEmailAddress"
+                            android:text="@={viewModel.email}"
+                            app:onFocusChange="@{viewModel.emailFocusChangeListener}"
+                            android:maxLength="18"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <TextView
+                        android:id="@+id/booking_warning"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/warning"
+                        android:textColor="@color/gray_light"
+                        android:textSize="18sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/emailTextInputLayout" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/booking_card_first_tourist"
+                style="@style/booking_main_card"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/booking_card_info_buyer">
+
+                <androidx.constraintlayout.widget.ConstraintLayout style="@style/booking_constraintLayout">
+
+                    <TextView
+                        android:id="@+id/booking_title_tourist"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:text="Первый турист"
+                        android:textColor="@color/black"
+                        android:textSize="28sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toTopOf="@+id/item_add_card_info_tourist"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageButton
+                        android:id="@+id/booking_button_tourist_visible"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:background="@drawable/background_booking_light"
+                        app:layout_constraintBottom_toTopOf="@+id/booking_card_info_tourist"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/vector_55" />
+
+                    <ImageButton
+                        android:id="@+id/booking_button_tourist_gone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:background="@drawable/background_booking_light"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toTopOf="@+id/booking_card_info_tourist"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/vector_56" />
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/booking_card_info_tourist"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="visible"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/booking_title_tourist">
+
+                        <LinearLayout
+                            android:id="@+id/item_add_first_tourist"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/booking_layout_tourist_name"
+                                style="@style/RoundedTextInputLayout"
+                                app:errorInput="@{viewModel.errorInputName}"
+                                app:showError="@{viewModel.showNameError}"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="16dp"
+                                android:hint="@string/name">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/booking_editText_tourist_name"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="@={viewModel.nameTourist}"
+                                    android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                                    android:inputType="textFilter" />
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/booking_layout_tourist_surname"
+                                style="@style/RoundedTextInputLayout"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="16dp"
+                                app:errorInput="@{viewModel.errorInputSurname}"
+                                app:showError="@{viewModel.showSurnameError}"
+                                android:hint="@string/surname"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/item_add_layout_tourist_name">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/booking_editText_tourist_surname"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="@={viewModel.surname}"
+                                    android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                                    android:inputType="textFilter" />
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/booking_layout_tourist_date"
+                                style="@style/RoundedTextInputLayout"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                app:errorInput="@{viewModel.errorInputDateOfBirth}"
+                                app:showError="@{viewModel.showDateOfBirthError}"
+                                android:layout_marginTop="16dp"
+                                android:hint="@string/birth">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/booking_editText_tourist_date"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:clickable="true"
+                                    android:focusable="false"
+                                    android:text="@={viewModel.dateOfBirth}"
+                                    android:inputType="date" />
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/booking_layout_tourist_citizenship"
+                                style="@style/RoundedTextInputLayout"
+                                android:layout_width="match_parent"
+                                app:errorInput="@{viewModel.errorInputCitizenship}"
+                                app:showError="@{viewModel.showCitizenshipError}"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="16dp"
+                                android:hint="@string/citizenship">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/booking_editText_tourist_citizenship"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="@={viewModel.citizenship}"
+                                    android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                                    android:inputType="textFilter" />
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/booking_layout_number_passport"
+                                style="@style/RoundedTextInputLayout"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                app:errorInput="@{viewModel.errorInputNumberPassport}"
+                                app:showError="@{viewModel.showNumberPassportError}"
+                                android:layout_marginTop="16dp"
+                                android:hint="@string/number_passport">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/booking_editText_number_passport"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="@={viewModel.numberPassport}"
+                                    android:inputType="number" />
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/booking_layout_validity_period"
+                                style="@style/RoundedTextInputLayout"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                app:errorInput="@{viewModel.errorInputValidityPeriod}"
+                                app:showError="@{viewModel.showValidityPeriodError}"
+                                android:layout_marginTop="16dp"
+                                android:hint="@string/validity_period">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/booking_editText_validity_period"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:clickable="true"
+                                    android:text="@={viewModel.validityPeriod}"
+                                    android:focusable="false"
+                                    android:inputType="date" />
+                            </com.google.android.material.textfield.TextInputLayout>
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/booking_card_another_tourist"
+                style="@style/booking_main_card"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="10dp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/booking_card_first_tourist">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    style="@style/booking_constraintLayout">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/booking_recyclerView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:listitem="@layout/item_add_tourist" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/booking_card_add_tourist"
+                style="@style/booking_main_card"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/booking_card_another_tourist">
+
+                <androidx.constraintlayout.widget.ConstraintLayout style="@style/booking_constraintLayout">
+
+                    <TextView
+                        android:id="@+id/booking_add_tourist"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/add_tourist"
+                        android:textColor="@color/black"
+                        android:textSize="28sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageButton
+                        android:id="@+id/booking_add_tourist_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:background="@drawable/background_booking_dark"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/add" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/booking_card_finish_price"
+                style="@style/booking_main_card"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/booking_card_add_tourist">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="16dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout style="@style/linearLayout_horizontal">
+
+                        <TextView
+                            style="@style/booking_details"
+                            android:text="@string/tour" />
+
+                        <TextView
+                            android:id="@+id/booking_tour_price"
+                            style="@style/booking_details_2"
+                            android:gravity="end"
+                            tools:text="186 600 ₽" />
+                    </LinearLayout>
+
+                    <LinearLayout style="@style/linearLayout_horizontal">
+
+                        <TextView
+                            style="@style/booking_details"
+                            android:text="@string/fuel_collection" />
+
+                        <TextView
+                            android:id="@+id/booking_fuel_charge"
+                            style="@style/booking_details_2"
+                            android:gravity="end"
+                            tools:text="9 300 ₽" />
+                    </LinearLayout>
+
+                    <LinearLayout style="@style/linearLayout_horizontal">
+
+                        <TextView
+                            style="@style/booking_details"
+                            android:text="@string/service_fee" />
+
+                        <TextView
+                            android:id="@+id/booking_service_charge"
+                            style="@style/booking_details_2"
+                            android:gravity="end"
+                            tools:text="2 136 ₽" />
+                    </LinearLayout>
+
+                    <LinearLayout style="@style/linearLayout_horizontal">
+
+                        <TextView
+                            style="@style/booking_details"
+                            android:text="@string/to_paid" />
+
+                        <TextView
+                            android:id="@+id/booking_to_paid"
+                            style="@style/booking_details_2"
+                            android:gravity="end"
+                            android:textColor="@color/blue"
+                            android:textStyle="bold"
+                            tools:text="198 036 ₽" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/booking_card_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/booking_card_finish_price">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/booking_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:backgroundTint="@color/blue"
+                    android:textAllCaps="false"
+                    tools:text="Оплатить "
+                    app:cornerRadius="18dp" />
+
+            </com.google.android.material.card.MaterialCardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>
+
+
+

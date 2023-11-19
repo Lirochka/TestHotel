@@ -72,7 +72,6 @@ class HotelRoomFragment : Fragment() {
         topAppBar = binding.topAppBar
         args.hotel?.let { hotel ->
             topAppBar.title = hotel
-            Log.d("MNK", "Hotel Title: $hotel")
         }
         topAppBar.setNavigationOnClickListener {
             findNavController().navigate(R.id.action_hotelRoomFragment_to_hotelInfoFragment)

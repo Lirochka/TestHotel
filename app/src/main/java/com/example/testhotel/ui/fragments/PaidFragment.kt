@@ -28,8 +28,17 @@ class PaidFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val random = (104893..106898).random()
+        val orderDetailsText = getString(R.string.order_confirmation_details_1) +
+                " №$random " + getString(R.string.order_confirmation_details_2)
+        binding.textOrderConfirmationDetails.text = orderDetailsText
+
+
         binding.paidButton.setOnClickListener {
-           findNavController().navigate(R.id.action_paidFragment_to_hotelInfoFragment)
+            findNavController().navigate(R.id.action_paidFragment_to_hotelInfoFragment)
+        }
+        binding.topAppBarToBooking.setOnClickListener {
+            findNavController().navigate(R.id.action_paidFragment_to_bookingFragment)
         }
     }
 

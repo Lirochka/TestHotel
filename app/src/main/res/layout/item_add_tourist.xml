@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="adapterViewModel"
+            type="com.example.testhotel.ui.viewmodel.AddTouristViewModel" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/item_add_main_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            style="@style/booking_constraintLayout">
+
+            <TextView
+                android:id="@+id/item_add_title_tourist"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:textColor="@color/black"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/item_add_card_info_tourist"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Второй турист" />
+
+            <ImageButton
+                android:id="@+id/button_add_tourist_visible"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/background_booking_light"
+                app:layout_constraintBottom_toTopOf="@+id/item_add_card_info_tourist"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/vector_55" />
+
+            <ImageButton
+                android:id="@+id/button_add_tourist_gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:visibility="gone"
+                android:background="@drawable/background_booking_light"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toTopOf="@+id/item_add_card_info_tourist"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/vector_56" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/item_add_card_info_tourist"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/item_add_title_tourist">
+
+                <LinearLayout
+                    android:id="@+id/item_add_first_tourist"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/item_add_layout_tourist_name"
+                        style="@style/RoundedTextInputLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:errorInput="@{adapterViewModel.errorAddInputName}"
+                        app:showError="@{adapterViewModel.showAddNameError}"
+                        android:layout_marginTop="16dp"
+                        android:hint="@string/name">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/item_add_editText_tourist_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@={adapterViewModel.nameTouristAdd}"
+                            android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                            android:inputType="textFilter" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/item_add_layout_tourist_surname"
+                        style="@style/RoundedTextInputLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        app:errorInput="@{adapterViewModel.errorAddInputSurname}"
+                        app:showError="@{adapterViewModel.showAddSurnameError}"
+                        android:hint="@string/surname"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/item_add_layout_tourist_name">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/item_add_editText_tourist_surname"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@={adapterViewModel.surnameAdd}"
+                            android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                            android:inputType="textFilter" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/item_add_layout_tourist_date"
+                        style="@style/RoundedTextInputLayout"
+                        android:layout_width="match_parent"
+                        app:errorInput="@{adapterViewModel.errorAddInputDate}"
+                        app:showError="@{adapterViewModel.showAddDateError}"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:hint="@string/birth">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/item_add_editText_tourist_date"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:clickable="true"
+                            android:focusable="false"
+                            android:text="@={adapterViewModel.dateOfBirthAdd}"
+                            android:inputType="date" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/item_add_layout_tourist_citizenship"
+                        style="@style/RoundedTextInputLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:errorInput="@{adapterViewModel.errorAddInputCitizenship}"
+                        app:showError="@{adapterViewModel.showAddCitizenshipError}"
+                        android:layout_marginTop="16dp"
+                        android:hint="@string/citizenship">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/item_add_editText_tourist_citizenship"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@={adapterViewModel.citizenshipAdd}"
+                            android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                            android:inputType="textFilter" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/item_add_layout_number_passport"
+                        style="@style/RoundedTextInputLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:errorInput="@{adapterViewModel.errorAddInputPassport}"
+                        app:showError="@{adapterViewModel.showAddPassportError}"
+                        android:layout_marginTop="16dp"
+                        android:hint="@string/number_passport">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/item_add_editText_number_passport"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@={adapterViewModel.numberPassportAdd}"
+                            android:inputType="number" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/item_add_layout_validity_period"
+                        style="@style/RoundedTextInputLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:errorInput="@{adapterViewModel.errorAddInputValidPeriod}"
+                        app:showError="@{adapterViewModel.showAddValidPeriodError}"
+                        android:layout_marginTop="16dp"
+                        android:hint="@string/validity_period">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/item_add_editText_validity_period"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:clickable="true"
+                            android:focusable="false"
+                            android:text="@={adapterViewModel.validityPeriodAdd}"
+                            android:inputType="date"  />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+</layout>

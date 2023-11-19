@@ -14,4 +14,6 @@
     <color name="blue_light">#1A0D72FF</color>
     <color name="gray_light">#828796</color>
     <color name="background_container">#33FBFBFC</color>
+    <color name="error">#26EB5757</color>
+    <color name="noError">#FFCCCCCC</color>
 </resources>

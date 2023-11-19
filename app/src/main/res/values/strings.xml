@@ -28,8 +28,11 @@
     <string name="whats_not_included">Что не включено</string>
     <string name="essentials">Самое необходимое</string>
     <string name="your_order_was_received">Ваш заказ принят в работу</string>
-    <string name="order_confirmation_details">Подтверждение заказа №104893 может занять некоторое время (от 1 часа до суток). Как только мы получим ответ от туроператора, вам на почту придет уведомление.</string>
+    <string name="order_confirmation_details_1">Подтверждение заказа </string>
+    <string name="order_confirmation_details_2">может занять некоторое время (от 1 часа до суток). Как только мы получим ответ от туроператора, вам на почту придет уведомление.</string>
 
+    <string name="phone_number">Номер телефона</string>
+    <string name="phone_number_hint">+7 (***) ***-**-**</string>
     <string name="error_input_name">Invalid name</string>
     <string name="error_input_surname">Invalid surname</string>
     <string name="error_input_dateOfBirth">Invalid dateOfBirth</string>

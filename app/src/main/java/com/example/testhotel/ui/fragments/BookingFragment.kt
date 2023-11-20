@@ -1,7 +1,6 @@
 package com.example.testhotel.ui.fragments
 
 import android.os.Bundle
-import android.os.Parcelable
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.LayoutInflater
@@ -13,7 +12,6 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.domain.model.add_tourist.Tourist
 import com.example.testhotel.ui.adapters.TouristListAdapter
 import com.example.testhotel.R
@@ -33,7 +31,6 @@ class BookingFragment : Fragment() {
 
     private lateinit var touristListAdapter: TouristListAdapter
     private var allFieldsValid = false
-
 
     private lateinit var topAppBar: MaterialToolbar
 
@@ -176,12 +173,12 @@ class BookingFragment : Fragment() {
 
         val isPhoneValid = viewModel.errorPhone.value == null
         val isEmailValid = viewModel.emailError.value == null
-        val isNameValid = addTouristViewModel.errorAddInputName.value == false
-        val isSurnameValid = addTouristViewModel.errorAddInputSurname.value == false
-        val isDateValid = addTouristViewModel.errorAddInputDate.value == false
-        val isCitizenshipValid = addTouristViewModel.errorAddInputCitizenship.value == false
-        val isNumberPassportValid = addTouristViewModel.errorAddInputPassport.value == false
-        val isPeriodValid = addTouristViewModel.errorAddInputValidPeriod.value == false
+        val isNameValid = addTouristViewModel.errorInputName.value == false
+        val isSurnameValid = addTouristViewModel.errorInputSurname.value == false
+        val isDateValid = addTouristViewModel.errorInputDateOfBirth.value == false
+        val isCitizenshipValid = addTouristViewModel.errorInputCitizenship.value == false
+        val isNumberPassportValid = addTouristViewModel.errorInputNumberPassport.value == false
+        val isPeriodValid = addTouristViewModel.errorInputValidityPeriod.value == false
 
 
         allFieldsValid = bookingFragmentFieldsValid &&

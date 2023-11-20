@@ -78,8 +78,8 @@
                         style="@style/RoundedTextInputLayout"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        app:errorInput="@{adapterViewModel.errorAddInputName}"
-                        app:showError="@{adapterViewModel.showAddNameError}"
+                        app:errorInput="@{adapterViewModel.errorInputName}"
+                        app:showError="@{adapterViewModel.showNameError}"
                         android:layout_marginTop="16dp"
                         android:hint="@string/name">
 
@@ -87,7 +87,7 @@
                             android:id="@+id/item_add_editText_tourist_name"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@={adapterViewModel.nameTouristAdd}"
+                            android:text="@={adapterViewModel.nameTourist}"
                             android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
                             android:inputType="textFilter" />
                     </com.google.android.material.textfield.TextInputLayout>
@@ -98,8 +98,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="16dp"
-                        app:errorInput="@{adapterViewModel.errorAddInputSurname}"
-                        app:showError="@{adapterViewModel.showAddSurnameError}"
+                        app:errorInput="@{adapterViewModel.errorInputSurname}"
+                        app:showError="@{adapterViewModel.showSurnameError}"
                         android:hint="@string/surname"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -109,7 +109,7 @@
                             android:id="@+id/item_add_editText_tourist_surname"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@={adapterViewModel.surnameAdd}"
+                            android:text="@={adapterViewModel.surname}"
                             android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
                             android:inputType="textFilter" />
                     </com.google.android.material.textfield.TextInputLayout>
@@ -118,8 +118,8 @@
                         android:id="@+id/item_add_layout_tourist_date"
                         style="@style/RoundedTextInputLayout"
                         android:layout_width="match_parent"
-                        app:errorInput="@{adapterViewModel.errorAddInputDate}"
-                        app:showError="@{adapterViewModel.showAddDateError}"
+                        app:errorInput="@{adapterViewModel.errorInputDateOfBirth}"
+                        app:showError="@{adapterViewModel.showDateOfBirthError}"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="16dp"
                         android:hint="@string/birth">
@@ -130,7 +130,7 @@
                             android:layout_height="wrap_content"
                             android:clickable="true"
                             android:focusable="false"
-                            android:text="@={adapterViewModel.dateOfBirthAdd}"
+                            android:text="@={adapterViewModel.dateOfBirth}"
                             android:inputType="date" />
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -139,8 +139,8 @@
                         style="@style/RoundedTextInputLayout"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        app:errorInput="@{adapterViewModel.errorAddInputCitizenship}"
-                        app:showError="@{adapterViewModel.showAddCitizenshipError}"
+                        app:errorInput="@{adapterViewModel.errorInputCitizenship}"
+                        app:showError="@{adapterViewModel.showCitizenshipError}"
                         android:layout_marginTop="16dp"
                         android:hint="@string/citizenship">
 
@@ -148,7 +148,7 @@
                             android:id="@+id/item_add_editText_tourist_citizenship"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@={adapterViewModel.citizenshipAdd}"
+                            android:text="@={adapterViewModel.citizenship}"
                             android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
                             android:inputType="textFilter" />
                     </com.google.android.material.textfield.TextInputLayout>
@@ -158,8 +158,8 @@
                         style="@style/RoundedTextInputLayout"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        app:errorInput="@{adapterViewModel.errorAddInputPassport}"
-                        app:showError="@{adapterViewModel.showAddPassportError}"
+                        app:errorInput="@{adapterViewModel.errorInputNumberPassport}"
+                        app:showError="@{adapterViewModel.showNumberPassportError}"
                         android:layout_marginTop="16dp"
                         android:hint="@string/number_passport">
 
@@ -167,7 +167,7 @@
                             android:id="@+id/item_add_editText_number_passport"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@={adapterViewModel.numberPassportAdd}"
+                            android:text="@={adapterViewModel.numberPassport}"
                             android:inputType="number" />
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -176,8 +176,8 @@
                         style="@style/RoundedTextInputLayout"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        app:errorInput="@{adapterViewModel.errorAddInputValidPeriod}"
-                        app:showError="@{adapterViewModel.showAddValidPeriodError}"
+                        app:errorInput="@{adapterViewModel.errorInputValidityPeriod}"
+                        app:showError="@{adapterViewModel.showValidityPeriodError}"
                         android:layout_marginTop="16dp"
                         android:hint="@string/validity_period">
 
@@ -187,7 +187,7 @@
                             android:layout_height="wrap_content"
                             android:clickable="true"
                             android:focusable="false"
-                            android:text="@={adapterViewModel.validityPeriodAdd}"
+                            android:text="@={adapterViewModel.validityPeriod}"
                             android:inputType="date"  />
                     </com.google.android.material.textfield.TextInputLayout>
                 </LinearLayout>
